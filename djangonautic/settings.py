@@ -25,7 +25,7 @@ SECRET_KEY = '9gtdden)#guzsr3jn6if*-@3z#p%dg8wuj8m(s9zg@5m(%(hb#'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['lit-temple-32822.herokuapp.com']
 
 
 # Application definition
