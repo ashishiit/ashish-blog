@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>user profile's page</h1>
+<h2><a href ="{% url 'articles:article_create' %}">Create Article</a></h2>
+<p>
+{% if ans %}
+{% for i in ans %}
+	<h3>{{i.title}}</h3>
+	{% if i.pic %}
+	<img src = '{{i.pic.url}}'/>
+	{% endif %}
+	<p>{{i.body}}</p>
+	<p>{{i.time}}</p>
+{% endfor %}
+{% endif %}
+</p>
+{% endblock %}

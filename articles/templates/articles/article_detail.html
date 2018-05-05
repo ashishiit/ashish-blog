@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+<title>Insert title here</title>
+{% block content %}
+{% if article %}
+<h2>{{article.title}}</h2>
+{% if artic.pic %}
+<img src = '{{article.pic }}'/>
+{% endif %}
+<p>{{article.body}}</p>
+<p>{{article.time}}</p>
+{% endif %}
+{% endblock %}

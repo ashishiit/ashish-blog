@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<h1>articles list</h1>
+
+<img src="{% static 'img/LuvUsid.jpg' %}">
+
+<div class ='articles'>
+{% for i in obj %}
+<div class = 'list'>
+<h1><a href='{%url 'articles:article_detail' slug=i.slug %}'>{{i.title}}</a></h1>
+<p>{{i.snippet}}</p>
+<p>{{i.time}}</p>
+{% if i.pic %}
+<img src = '{{i.pic }}'/>
+{% endif %}
+</div>
+{% endfor %}
+</div>
+{% endblock %}

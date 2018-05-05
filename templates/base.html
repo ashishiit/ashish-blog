@@ -1,0 +1,24 @@
+{% load static %}<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Articles</title>
+<link rel = 'stylesheet' type="text/css" href = "{% static 'css/styles.css' %}">
+</head>
+
+<body>
+<nav>
+{% if user.is_authenticated %}
+	<form action = "{% url 'accounts:logout_view' %}" method = 'post'>
+	{% csrf_token %}
+	<button type='submit'>Logout</button>
+	</form>
+{% else %}
+	<li><a href = "{% url 'accounts:login_view' %}">login</a></li>
+	<li><a href = "{% url 'accounts:sign_up' %}">sign up</a></li>
+{% endif %}
+</nav>
+{% block content %}
+{% endblock %}
+</body>
+</html>
