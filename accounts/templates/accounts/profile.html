@@ -4,15 +4,20 @@
 <h1>user profile's page</h1>
 <h2><a href ="{% url 'articles:article_create' %}">Create Article</a></h2>
 <p>
+<div class="card" style="width: 18rem;">
 {% if ans %}
 {% for i in ans %}
-	<h3>{{i.title}}</h3>
 	{% if i.pic %}
-	<img src = '{{i.pic.url}}'/>
+	<img class="card-img-top" src="{{i.pic.url}}" alt="Card image cap">	
 	{% endif %}
-	<p>{{i.body}}</p>
-	<p>{{i.time}}</p>
+	<div class="card-body">
+		<h5 class="card-title">{{i.title}}</h5>
+		<p class="card-text">{{i.body}}</p>
+		<p class="card-text">{{i.time}}</p>
+    	<a class ="btn btn-primary" href = "{%url 'accounts:article_delete' slug=i.slug %}">Delete Post</a>
 {% endfor %}
+</div>
 {% endif %}
+</div>
 </p>
 {% endblock %}

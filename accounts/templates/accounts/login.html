@@ -8,12 +8,14 @@
 
 <h2>LOGIN</h2>
 <form  action = "/accounts/login" method ='post'>
+<div class = "form-group"> 
 {% csrf_token %}
 {{form.as_p}}
 {% if request.GET.next %}
 	<input type='hidden' name = 'next' value = '{{request.GET.next}}'>
 {% endif %}
-<input type='submit' value = 'Login'>
+</div>
+<input class="btn btn-primary" type="submit" value="Login">
 </form>
 </body>
 </html>

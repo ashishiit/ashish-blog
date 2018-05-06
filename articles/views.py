@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .models import Article
 from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
@@ -10,12 +10,13 @@ def article_list(request):
     obj = Article.objects.all().order_by('time')
     return render(request, 'articles/article_list.html', {'obj':obj})
 
-def article_detail(request,slug=None):
-#     print(slug)
+def article_delete(request,slug=None):
+    print(slug)
 #     return HttpResponse(slug)
     article = Article.objects.get(slug=slug)
-    print(article)
-    return render(request, 'articles/article_detail.html', {'article':article})
+    user = article.authorid
+    article.delete()    
+    return redirect(request, 'accounts:profile_page', slug=user)
 
 @login_required(login_url='/accounts/login')
 def article_create(request):

@@ -15,5 +15,6 @@ urlpatterns = [
 #    path('logout', views.logout, name = 'logout_view'),
    path('logout',auth_views.logout,{'next_page': '/accounts/login'}, name='logout_view'),
 #     path('profile', core_views.profile_page, name ='profile_page'),
-    re_path(r'^(?P<slug>[\w-]+)/$', core_views.profile_page, name = 'profile_page'),
+    re_path(r'^(?P<slug>[\w-]+)$', core_views.profile_page, name = 'profile_page'),
+    re_path(r'^(?P<slug>[\w-]+)/delete$', core_views.article_delete, name = 'article_delete'),
 ]
