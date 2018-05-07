@@ -3,8 +3,10 @@
 {% block content %}
 {% if article %}
 <h2>{{article.title}}</h2>
-{% if artic.pic %}
-<img src = '{{article.pic }}'/>
+{% if article.pic %}
+<div class="card" style="width: 18rem;">
+<img class="card-img-top" src = '{{article.pic.url }}'>
+</div>
 {% endif %}
 <p>{{article.body}}</p>
 <p>{{article.time}}</p>

@@ -16,8 +16,13 @@
 <nav>
 {% if user.is_authenticated %}
 	<form action = "{% url 'accounts:logout_view' %}" method = 'post'>
+	
 	{% csrf_token %}
-	<button type='submit'>Logout</button>
+	<ul nav class="nav nav-pills">
+	  <li class="nav-item">
+  <button type='submit' class="btn btn-primary">Logout</button>
+  </li>
+	</ul>
 	</form>
 {% else %}
 	<li><a href = "{% url 'accounts:login_view' %}">login</a></li>

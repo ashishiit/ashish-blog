@@ -39,12 +39,14 @@ def logout_view(request):
 def article_delete(request, slug=None):
     print(slug)
     user = request.user
-    obj = Article.objects.get(slug=slug,authorid=request.user)
+    print('user delete',user)
+    obj = Article.objects.get(slug=slug,authorid=user)
+    print('delete',obj.slug)
     obj.delete()
     return redirect('accounts:profile_page',slug=user)
 
 def profile_page(request,slug=None):
-#     print('error check')
+    print('error check')
     obj = Article.objects.all()
     ans = []
     for i in obj:
