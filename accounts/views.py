@@ -71,8 +71,8 @@ def profile_page(request,slug=None):
         print(i)
 #     print(request.user in users)
     print(ans)
-    print(ans[0].authorid)
+#    print(ans[0].authorid)
     if str(request.user) == str(slug):
-        return render(request, 'accounts/profile.html', {'ans':ans, 'users':users})
+        return render(request, 'accounts/profile.html', {'ans':ans})
     else:
         return render(request, 'accounts/guest_profile.html', {'ans':ans})
