@@ -1,35 +1,50 @@
 {% extends 'base.html' %}
 
 {% block content %}
+
+
+
+<p>
+{% if user.is_authenticated %}
+<h2> You are logged in as <h1>{{user}}</h1></h2>
+{% endif %}
 <ul nav class="nav nav-pills">
 	<li class="nav-item">
   <a class="nav-link active" href="{% url 'articles:article_create' %}">Create Post</a>
   </li>
   <ul>
-
-<p>
-{% if ans %}
 <h1>Welcome to your personal Blog</h1>
+
+
+{% if ans %}
+
+
 {% for i in ans %}
+		
+<div class="row-sm-20">
+  <div class="col-sm-20"> 
 <div class="card" style="width: 18rem;">
 	{% if i.pic %}	
 	<img class="card-img-top" src="{{i.pic.url}}" alt="Card image cap">	
 	{% endif %}
-	<div class="row">
-  <div class="col-sm-6">
+ 
 	<div class="card-body">
 		<a class="card-title" href = "{%url 'articles:article_detail' slug=i.slug %}">{{i.title}}</a>
 		<p class="card-text">{{i.snippet}}</p>
 		<p class="card-text">{{i.time}}</p>
+		
 		<div class="btn-group" role="group" aria-label="Basic example">
+		
     		<a class ="btn btn-primary" href = "{%url 'accounts:article_delete' slug=i.slug %}">Delete Post</a>
     		<a class ="btn btn-primary" href = "{%url 'articles:article_update' slug=i.slug %}">Update Post</a>
+    		
     	</div>
-    </div>
-    </div>
-    </div>
+    </div>  
+  </div>
+</div>
 {% endfor %}
 {% endif %}
 </div>
 </p>
+
 {% endblock %}

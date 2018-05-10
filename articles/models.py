@@ -8,8 +8,7 @@ class Article(models.Model):
     body = models.TextField()
     slug = models.SlugField(unique=True)
     time = models.DateTimeField(auto_now_add=True)
-    pic = models.ImageField(null=True, blank=True)
-    
+    pic = models.ImageField(null=True, blank=True)    
     authorid = models.ForeignKey(User,models.SET_NULL,blank=True,null=True)   
     
     def __str__(self):
