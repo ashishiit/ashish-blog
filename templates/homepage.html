@@ -8,16 +8,26 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
 <title>Homepage</title>
+<style>
+h1{
+text-align: center;
+}
+a
+{
+text-align: center;
+}
+</style>
 </head>
 <body>
 <div class = "container-fluid">
 <h1>Welcome !</h1>
 
-
 <!-- <h3>Login </h3> -->
+<div class="col-md-20 text-center">
 <a class="btn btn-primary" href = "{%url 'accounts:login_view' %}">Login</a>
 <!-- <h3>Create Account</h3> -->
 <a class="btn btn-primary" href = "{%url 'accounts:sign_up' %}">Create Account</a>
+</div>
 </div>
 <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
