@@ -2,18 +2,30 @@
 
 {% block content %}
 
-
+<style>
+h2,h3{
+text-align:center;
+}
+h3{
+text-align:center;
+}
+#user{
+color:green;
+}
+</style>
 
 <p>
 {% if user.is_authenticated %}
-<h2> You are logged in as <h1>{{user}}</h1></h2>
+<h2> You are logged in as <span id="user">{{user}}</span></h2>
 {% endif %}
 <ul nav class="nav nav-pills">
 	<li class="nav-item">
   <a class="nav-link active" href="{% url 'articles:article_create' %}">Create Post</a>
   </li>
-  <ul>
-<h1>Welcome to your personal Blog</h1>
+</ul>
+  <br>
+<h3>Welcome to your personal Blog</h3>
+
 
 
 {% if ans %}
@@ -21,9 +33,9 @@
 
 {% for i in ans %}
 		
-<div class="row-sm-20">
-  <div class="col-sm-20"> 
-<div class="card" style="width: 18rem;">
+<div class="row-sm-50">
+  <div class="col-sm-50"> 
+<div class="card" style="width: 20rem;">
 	{% if i.pic %}	
 	<img class="card-img-top" src="{{i.pic.url}}" alt="Card image cap">	
 	{% endif %}
@@ -45,6 +57,6 @@
 {% endfor %}
 {% endif %}
 </div>
-</p>
+
 
 {% endblock %}

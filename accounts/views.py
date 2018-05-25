@@ -40,7 +40,8 @@ def login_view(request, slug=None):
 
 def logout_view(request):    
     logout(request)
-    return redirect('accounts:login_view')
+    return redirect('')
+#     return redirect('accounts:login_view')
 
 @login_required(login_url='/accounts/login')
 def article_delete(request, slug=None):

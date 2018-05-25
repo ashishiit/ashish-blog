@@ -20,13 +20,13 @@
 	{% csrf_token %}
 	<ul nav class="nav nav-pills">
 	  <li class="nav-item">
-  <button type='submit' class="btn btn-primary">Logout</button>
+  <button type='submit' class="btn btn-primary">Sign out</button>
   </li>
 	</ul>
 	</form>
 {% else %}
-	<li><a href = "{% url 'accounts:login_view'%}">login</a></li>
-	<li><a href = "{% url 'accounts:sign_up' %}">sign up</a></li>
+<!-- 	<li><a href = "{% url 'accounts:login_view'%}">login</a></li> -->
+<!-- 	<li><a href = "{% url 'accounts:sign_up' %}">sign up</a></li> -->
 {% endif %}
 </nav>
 {% block content %}

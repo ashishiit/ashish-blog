@@ -5,9 +5,14 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form action="{% url 'registration/login.html' %}" method ='post'>
-{% csrf_token %}
+<!-- <form action="{% url 'registration/login.html' %}" method ='post'> -->
+<!-- {% csrf_token %} -->
 
-</form>
+<!-- </form> -->
+<div class="col-md-20 text-center">
+<a class="btn btn-primary" href = "{%url 'accounts:login_view' %}">Login</a>
+<!-- <h3>Create Account</h3> -->
+<a class="btn btn-primary" href = "{%url 'accounts:sign_up' %}">Create Account</a>
+</div>
 </body>
 </html>
