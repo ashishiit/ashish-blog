@@ -71,11 +71,11 @@ def profile_page(request,slug=None):
         print(i)
 #     print(request.user in users)
     print(ans)
-<<<<<<< HEAD
+
 #     print(ans[0].authorid)
-=======
+
 #    print(ans[0].authorid)
->>>>>>> c2e8fd3afb69f93cbc780cf1256974a8a3ac4825
+
     if str(request.user) == str(slug):
         return render(request, 'accounts/profile.html', {'ans':ans})
     else:
