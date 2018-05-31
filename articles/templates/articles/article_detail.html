@@ -10,19 +10,18 @@
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
 {% if article %}
-<div class="row-sm-20">
-  <div class="col-sm-20">
-  <div class="card" style="width: 18rem;">
-<h2>{{article.title}}</h2>
-{% if article.pic %}
+<div class="mx-auto" style="width: 300px;">
+  	<div class="card" >
+		<h2>{{article.title}}</h2>
+			{% if article.pic %}
 
 
-<img class="card-img-top" src = '{{article.pic.url }}'>
-<p>{{article.body}}</p>
-<p>{{article.time}}</p>
-<div class="fb-comments" data-href="https://developers.facebook.com/docs/plugins/comments#configurator" data-numposts="5"></div>
+			<img class="card-img-top" src = '{{article.pic.url }}'>
+				<p>{{article.body}}</p>
+				<p>{{article.time}}</p>
+	<div class="fb-comments" data-href="https://developers.facebook.com/docs/plugins/comments#configurator" data-numposts="5"></div>
+
 </div>
-
 {% endif %}
 </div>
 </div>

@@ -12,6 +12,9 @@ text-align:center;
 #user{
 color:green;
 }
+.card{
+bottom-margin: 10px;
+}
 </style>
 
 <p>
@@ -33,30 +36,31 @@ color:green;
 
 {% for i in ans %}
 		
-<div class="row-sm-50">
-  <div class="col-sm-50"> 
-<div class="card" style="width: 20rem;">
+<div class="mx-auto" style="width: 300px;">
+   
+	<div class="card">
 	{% if i.pic %}	
 	<img class="card-img-top" src="{{i.pic.url}}" alt="Card image cap">	
 	{% endif %}
  
-	<div class="card-body">
+		<div class="card-body">
 		<a class="card-title" href = "{%url 'articles:article_detail' slug=i.slug %}">{{i.title}}</a>
 		<p class="card-text">{{i.snippet}}</p>
 		<p class="card-text">{{i.time}}</p>
 		
-		<div class="btn-group" role="group" aria-label="Basic example">
+			<div class="btn-group" role="group" aria-label="Basic example">
 		
     		<a class ="btn btn-primary" href = "{%url 'accounts:article_delete' slug=i.slug %}">Delete Post</a>
+    		&nbsp;
     		<a class ="btn btn-primary" href = "{%url 'articles:article_update' slug=i.slug %}">Update Post</a>
     		
-    	</div>
-    </div>  
-  </div>
+    		</div>
+    	</div>  
+  	</div>
 </div>
 {% endfor %}
 {% endif %}
-</div>
+
 
 
 {% endblock %}
