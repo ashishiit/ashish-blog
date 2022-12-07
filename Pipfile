@@ -9,7 +9,7 @@ name = "pypi"
 
 "boto3" = "==1.5.12"
 botocore = "==1.8.26"
-certifi = "==2017.11.5"
+certifi = "==2022.12.7"
 chardet = "==3.0.4"
 cycler = "==0.10.0"
 django = "==2.0"
